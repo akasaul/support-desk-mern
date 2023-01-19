@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+mongoose.set("strictQuery", false);
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect('mongodb+srv://akasaul:akasaul@niko.5puetkc.mongodb.net/?retryWrites=true&w=majority');
-        console.log(`MonogoDb Connected: ${conn.connection.host}`.cyan.underline);
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(conn);
+        console.log(`Monogo Db Connected: ${conn.connection .host}`.cyan.underline);
     } catch(err) {
         console.log(`Error: ${err}`.red.underline.bold);
-        process.exit(1);
+        // process.exit(1);
     }
 }
 
