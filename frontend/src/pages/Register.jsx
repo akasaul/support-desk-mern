@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { FaUser } from "react-icons/fa"; 
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from 'react-redux'; 
-import "react-toastify/dist/ReactToastify.css";
 import {register, reset} from "../features/auth/authSlice";
+import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -48,6 +48,10 @@ const Register = () => {
   useEffect(() => {
     if(isError) {
       toast.error(message);
+    }
+
+    if(isLoading) {
+      <Spinner />
     }
 
     // Redirect when logged in 

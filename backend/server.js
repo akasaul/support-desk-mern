@@ -14,8 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 const userRoutes = require('./routes/userRoutes');
+const ticketRoutes = require('./routes/ticketRoutes');
 
 app.use('/api/users', userRoutes);
+app.use('/api/tickets', ticketRoutes);
 
 app.use(errorHandler);
 

@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Header from './components/Header';
+import "react-toastify/dist/ReactToastify.css";
 import {ToastContainer} from "react-toastify";
 
 function App() {
